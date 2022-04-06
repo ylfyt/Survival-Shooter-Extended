@@ -1,24 +1,29 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System;
 
 public class ScoreManager : MonoBehaviour
 {
-    public static int score;
+    public static float score;
+    int multiplier = 1;
 
 
     Text text;
 
 
-    void Awake ()
+    void Start ()
     {
         text = GetComponent <Text> ();
         score = 0;
     }
 
-
     void Update ()
     {
-        text.text = "Score: " + score;
+        score += Time.deltaTime * multiplier;
+
+        text.text = "Score: " + String.Format("{0:0}",score);
     }
+
+
 }
