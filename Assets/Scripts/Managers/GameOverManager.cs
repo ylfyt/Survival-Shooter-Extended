@@ -26,6 +26,7 @@ public class GameOverManager : MonoBehaviour
         {
             anim.SetBool("GameOver", true);
             isGameOver = true;
+            ScoreManager.isScoreOver = true;
 
             if (!isSaved) {
                 DataManager.SaveData("dummy1", ScoreManager.finalScore, "ZEN");

@@ -16,9 +16,9 @@ public static class DataManager
 
         BinaryFormatter formatter = new BinaryFormatter();
         if (GAMEMODE == "ZEN") {
-            path = Application.persistentDataPath + "/zen/" + unixTime + ".fun";
+            path = Application.persistentDataPath + "/zen_" + unixTime;
         } else {
-            path = Application.persistentDataPath + "/waves/" + unixTime + ".fun";
+            path = Application.persistentDataPath + "/wave_" + unixTime;
         }
         FileStream stream = new FileStream(path, FileMode.Create);
 
@@ -26,6 +26,7 @@ public static class DataManager
 
         formatter.Serialize(stream, data);
         stream.Close();
+        Debug.Log(path);
     }
 
     public static PlayerData LoadPlayer(string GAMEMODE) {
@@ -35,9 +36,9 @@ public static class DataManager
         string unixTime = ((DateTimeOffset)timestamp).ToUnixTimeSeconds().ToString();
 
         if (GAMEMODE == "ZEN") {
-            path = Application.persistentDataPath + "/zen/" + unixTime + ".fun";
+            path = Application.persistentDataPath + "/zen_" + unixTime;
         } else {
-            path = Application.persistentDataPath + "/waves/" + unixTime + ".fun";
+            path = Application.persistentDataPath + "/wave_" + unixTime;
         }
 
         if (File.Exists(path)) {

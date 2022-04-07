@@ -8,6 +8,7 @@ public class ScoreManager : MonoBehaviour
     public static float score;
     public static int finalScore;
     int multiplier = 1;
+    public static bool isScoreOver = false;
 
 
     Text text;
@@ -21,9 +22,14 @@ public class ScoreManager : MonoBehaviour
 
     void Update ()
     {
-        score += Time.deltaTime * multiplier;
-        finalScore = (int) score;
-        text.text = "Score: " + String.Format("{0:0}",score);
+        if (!isScoreOver) {
+            score += Time.deltaTime * multiplier;
+            finalScore = (int) score;
+            text.text = "Score: " + String.Format("{0:0}",score);
+        } else {
+            text.text = "Score: " + String.Format("{0:0}",score);
+        }
+        
     }
 
 
