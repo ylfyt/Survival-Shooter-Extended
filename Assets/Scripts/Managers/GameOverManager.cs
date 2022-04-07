@@ -11,6 +11,7 @@ public class GameOverManager : MonoBehaviour
     float restartTimer;
 
     bool isGameOver = false;
+    bool isSaved = false;
 
     void Update()
     {
@@ -18,6 +19,12 @@ public class GameOverManager : MonoBehaviour
         {
             canvasAnimator.SetBool("GameOver", true);
             isGameOver = true;
+            ScoreManager.isScoreOver = true;
+
+            if (!isSaved) {
+                DataManager.SaveData("dummy1", ScoreManager.finalScore, "ZEN");
+                isSaved = true;
+            }
 
             restartTimer += Time.deltaTime;
 
