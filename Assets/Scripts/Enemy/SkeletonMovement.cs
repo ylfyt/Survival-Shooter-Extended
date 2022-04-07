@@ -60,6 +60,10 @@ public class SkeletonMovement : MonoBehaviour
     void Attack()
     {
         anim.SetTrigger("Attack");
+    }
+
+    public void ShootProjectile()
+    {
         GameObject projectileInstance = Instantiate(projectilePrefab, shootPoint.position, shootPoint.rotation);
         Rigidbody proRb = projectileInstance.GetComponent<Rigidbody>();
         proRb.velocity = shootPoint.forward * projectileSpeed;
