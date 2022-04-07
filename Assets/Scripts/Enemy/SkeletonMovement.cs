@@ -16,6 +16,9 @@ public class SkeletonMovement : MonoBehaviour
 
     Animator anim;
     EnemyHealth enemyHealth;
+    public GameObject projectilePrefab;
+    public Transform shootPoint;
+    public float projectileSpeed = 10f;
 
     void Start()
     {
@@ -57,5 +60,10 @@ public class SkeletonMovement : MonoBehaviour
     void Attack()
     {
         anim.SetTrigger("Attack");
+        GameObject projectileInstance = Instantiate(projectilePrefab, shootPoint.position, shootPoint.rotation);
+        Rigidbody proRb = projectileInstance.GetComponent<Rigidbody>();
+        proRb.velocity = shootPoint.forward * projectileSpeed;
+
+        Destroy(projectileInstance, 2);
     }
 }
