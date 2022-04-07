@@ -583,7 +583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 15
   rb: {fileID: 1725711310}
-  attackRate: 1
+  attackRate: 0.3
 --- !u!1 &864335275255116140
 GameObject:
   m_ObjectHideFlags: 0
