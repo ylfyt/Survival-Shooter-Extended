@@ -18,6 +18,7 @@ public class ScoreManager : MonoBehaviour
     {
         text = GetComponent <Text> ();
         score = 0;
+        Debug.Log(text);
     }
 
     void Update ()

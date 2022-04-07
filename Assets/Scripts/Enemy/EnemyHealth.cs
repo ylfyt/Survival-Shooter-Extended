@@ -68,6 +68,8 @@ public class EnemyHealth : MonoBehaviour
 
         enemyAudio.clip = deathClip;
         enemyAudio.Play();
+        EnemyManager.remainingEnemies--;
+        Debug.Log(EnemyManager.remainingEnemies);
     }
 
 
