@@ -19,20 +19,23 @@ public class EnemyManager : MonoBehaviour
         if (isZenMode)
         {
             InvokeRepeating("Spawn", spawnTime, spawnTime);
-        } else {
+        }
+        else
+        {
             level = 1;
             SpawnWave();
             level++;
         }
-        
+
     }
 
-    void Update() {
-        if (playerHealth.currentHealth <= 0f) { return; }
+    void Update()
+    {
+        if (playerHealth.isDead) { return; }
 
         if (!isZenMode)
         {
-            if (remainingEnemies <= 0 )
+            if (remainingEnemies <= 0)
             {
                 SpawnWave();
                 level++;
@@ -56,7 +59,7 @@ public class EnemyManager : MonoBehaviour
 
     void SpawnWave()
     {
-        
+
         totalEnemies = 10 * level;
         remainingEnemies = totalEnemies;
         while (totalEnemies > 0)
