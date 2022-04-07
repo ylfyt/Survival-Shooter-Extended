@@ -17,7 +17,6 @@ public class EnemyMovement : MonoBehaviour
         nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
     }
 
-
     void Update()
     {
         if (enemyHealth == null)
