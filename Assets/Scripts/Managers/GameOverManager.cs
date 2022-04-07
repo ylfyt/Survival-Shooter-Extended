@@ -11,6 +11,7 @@ public class GameOverManager : MonoBehaviour
     float restartTimer;
 
     bool isGameOver = false;
+    bool isSaved = false;
 
 
     void Awake()
@@ -25,6 +26,11 @@ public class GameOverManager : MonoBehaviour
         {
             anim.SetBool("GameOver", true);
             isGameOver = true;
+
+            if (!isSaved) {
+                DataManager.SaveData("dummy1", ScoreManager.finalScore, "ZEN");
+                isSaved = true;
+            }
 
             restartTimer += Time.deltaTime;
 

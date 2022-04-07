@@ -6,6 +6,7 @@ using System;
 public class ScoreManager : MonoBehaviour
 {
     public static float score;
+    public static int finalScore;
     int multiplier = 1;
 
 
@@ -21,7 +22,7 @@ public class ScoreManager : MonoBehaviour
     void Update ()
     {
         score += Time.deltaTime * multiplier;
-
+        finalScore = (int) score;
         text.text = "Score: " + String.Format("{0:0}",score);
     }
 
