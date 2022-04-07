@@ -28,7 +28,7 @@ public class EnemyMovement : MonoBehaviour
         {
             Debug.Log("PlayerHealth is null");
         }
-        if (enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0)
+        if (enemyHealth.currentHealth > 0 && !playerHealth.isDead)
         {
             nav.SetDestination(player.position);
         }
