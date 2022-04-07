@@ -42,6 +42,7 @@ public class EnemyHealth : MonoBehaviour
         if (isDead)
             return;
 
+        // Debug.Log(gameObject.name + " is take damage");
         enemyAudio.Play();
 
         currentHealth -= amount;
@@ -51,6 +52,7 @@ public class EnemyHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            // Debug.Log(gameObject.name + " is death");
             Death();
         }
     }
