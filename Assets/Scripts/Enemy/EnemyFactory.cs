@@ -12,30 +12,29 @@ public class EnemyFactory : MonoBehaviour, IFactory
 
     public GameObject FactoryMethod(int tag)
     {
-        if (tag == 2)
-        {
-            if (EnemyManager.waveLevel % 3 == 0)
-            {
-                if (!isBossSummoned)
-                {
-                    isBossSummoned = true;
-                } else {
-                    tag = Random.Range(0, 2);
-                }
+        if (EnemyManager.waveLevel % 3 == 0) {
+            if (!isBossSummoned) {
+                tag = 5;
+                isBossSummoned = true;
+                Debug.Log("Tag = 5");
             } else {
-                isBossSummoned = false;
-                tag = Random.Range(0, 2);
+                tag = Random.Range(0, 5);
             }
+        } else {
+            isBossSummoned = false;
+            tag = Random.Range(0, 5);
         }
 
         int pos;
         if (tag == 1)
         {
             pos = Random.Range(2, 5);
-        } else {
+        }
+        else
+        {
             pos = Random.Range(0, 5);
         }
-        GameObject enemy = Instantiate(enemyPrefab[tag], enemyPositions[pos].position, enemyPositions[tag].rotation);
+        GameObject enemy = Instantiate(enemyPrefab[tag], enemyPositions[pos].position, enemyPositions[pos].rotation);
         return enemy;
     }
 }
