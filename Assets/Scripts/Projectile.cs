@@ -16,6 +16,9 @@ public class Projectile : MonoBehaviour
                 return;
             }
 
+            if (playerHealth.isDead)
+                return;
+
             playerHealth.TakeDamage(damaged);
             Destroy(gameObject);
         }

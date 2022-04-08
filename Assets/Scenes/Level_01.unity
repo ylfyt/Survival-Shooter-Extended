@@ -187,7 +187,7 @@ MonoBehaviour:
   enemyPrefab:
   - {fileID: 1818861082154570, guid: 5e45c8f884f6d124ea0499aae7fdbec8, type: 3}
   - {fileID: 739337188927912821, guid: 102150e0373cc2849a99639e45896886, type: 3}
-  - {fileID: 8490436512523083310, guid: 9d3ac1e9045369548bdc247cfc16bbcc, type: 3}
+  - {fileID: 2401968234347126026, guid: 0d14919b3da739341829dd1084bfc9eb, type: 3}
   enemyPositions:
   - {fileID: 2058135648}
   - {fileID: 735472280}

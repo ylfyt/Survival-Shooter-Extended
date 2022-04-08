@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossAttack : MonoBehaviour
 {
-    public float radius = 5f;
+    public float radius = 3.5f;
     Transform player;
     Rigidbody rb;
 
@@ -48,7 +48,7 @@ public class BossAttack : MonoBehaviour
 
         float dist = Vector3.Distance(player.position, transform.position);
 
-        if (dist <= radius && !playerHealth.isDead)
+        if (dist <= radius && !playerHealth.isDead && enemyHealth.currentHealth > 0)
         {
             rb.transform.LookAt(player);
             if (!attacking)
@@ -67,7 +67,7 @@ public class BossAttack : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" && other.GetType().Name != "SphereCollider")
+        if (other.tag == "Player" && other.GetType().Name != "SphereCollider" && enemyHealth.currentHealth > 0)
         {
             var playerHealth = other.GetComponent<PlayerHealth>();
             playerHealth.TakeDamage(bossDamage);

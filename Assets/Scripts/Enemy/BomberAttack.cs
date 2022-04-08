@@ -21,7 +21,7 @@ public class BomberAttack : MonoBehaviour
     {
         if (other.tag == "Player" && other.GetType().Name != "SphereCollider")
         {
-            if (!isDead)
+            if (!isDead && enemyHealth.currentHealth > 0)
             {
                 isDead = true;
                 anim.SetTrigger("Attack");

@@ -22,6 +22,8 @@ public class PlayerAttribute : MonoBehaviour
 
     void Update()
     {
+        if (health <= 0)
+            health = 0;
         powerText.text = "P: " + power.ToString();
         healthText.text = "H: " + health.ToString();
         speedText.text = "S: " + speed.ToString();
