@@ -8,7 +8,7 @@ public class EnemyManager : MonoBehaviour
 
     public int totalEnemies;
     public static int remainingEnemies;
-    public static int level;
+    public static int waveLevel;
     public bool isZenMode = true;
 
     [SerializeField]
@@ -22,9 +22,9 @@ public class EnemyManager : MonoBehaviour
         }
         else
         {
-            level = 1;
+            waveLevel = 1;
             SpawnWave();
-            level++;
+            waveLevel++;
         }
 
     }
@@ -38,7 +38,7 @@ public class EnemyManager : MonoBehaviour
             if (remainingEnemies <= 0)
             {
                 SpawnWave();
-                level++;
+                waveLevel++;
             }
         }
     }
@@ -60,7 +60,7 @@ public class EnemyManager : MonoBehaviour
     void SpawnWave()
     {
 
-        totalEnemies = 10 * level;
+        totalEnemies = 10 * waveLevel;
         remainingEnemies = totalEnemies;
         while (totalEnemies > 0)
         {
