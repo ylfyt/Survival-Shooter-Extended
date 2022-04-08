@@ -7,12 +7,16 @@ public class PlayerData
 {
     public string name;
     public int score;
-    public int waveLevel;
+    public int waveLevel = 0;
 
     public PlayerData(string name_, int score_)
     {
         name = name_;
         score = score_;
+        if (!PlayerInfo.isZenMode)
+        {
+            waveLevel = EnemyManager.waveLevel;
+        }
     }
 
 }

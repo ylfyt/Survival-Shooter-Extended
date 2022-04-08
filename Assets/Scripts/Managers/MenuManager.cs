@@ -13,7 +13,6 @@ public class MenuManager : MonoBehaviour
         username = PlayerPrefs.GetString("username");
         if (username == "")
         {
-            Debug.Log("Username doesn't exist");
             SceneManager.LoadScene(sceneName: "Intro");
             return;
         }
@@ -50,5 +49,11 @@ public class MenuManager : MonoBehaviour
     {
         PlayerPrefs.SetString("mode", "wave");
         SceneManager.LoadScene(sceneName: "Level_01");
+    }
+
+    public void GoToRename()
+    {
+        PlayerPrefs.DeleteKey("username");
+        SceneManager.LoadScene(sceneName: "Intro");
     }
 }

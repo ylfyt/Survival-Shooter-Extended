@@ -15,10 +15,8 @@ public class UserSetup : MonoBehaviour
         string name = PlayerPrefs.GetString("username", "");
         if (name == "")
         {
-            Debug.Log("Username doesn't exist");
             return;
         }
-        Debug.Log("Start with " + name);
         SceneManager.LoadScene(sceneName: "Menu");
     }
 
