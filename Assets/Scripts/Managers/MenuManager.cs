@@ -20,4 +20,9 @@ public class MenuManager : MonoBehaviour
 
         welcomeText.text = "Welcome " + username;
     }
+
+    public void GoToZenScoreboard()
+    {
+        SceneManager.LoadScene(sceneName: "ZenScoreboard");
+    }
 }

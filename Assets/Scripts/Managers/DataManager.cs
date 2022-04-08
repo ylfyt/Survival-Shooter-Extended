@@ -7,17 +7,21 @@ using System;
 
 public static class DataManager
 {
-    
-    public static void SaveData (string name_, int score_, string GAMEMODE) {
+
+    public static void SaveData(string name_, int score_, string GAMEMODE)
+    {
         string path;
 
         DateTime timestamp = DateTime.Now;
         string unixTime = ((DateTimeOffset)timestamp).ToUnixTimeSeconds().ToString();
 
         BinaryFormatter formatter = new BinaryFormatter();
-        if (GAMEMODE == "ZEN") {
+        if (GAMEMODE == "ZEN")
+        {
             path = Application.persistentDataPath + "/zen_" + unixTime;
-        } else {
+        }
+        else
+        {
             path = Application.persistentDataPath + "/wave_" + unixTime;
         }
         FileStream stream = new FileStream(path, FileMode.Create);
@@ -29,30 +33,36 @@ public static class DataManager
         Debug.Log(path);
     }
 
-    public static PlayerData LoadPlayer(string GAMEMODE) {
-        string path;
+    public static PlayerData[] LoadPlayer(string GAMEMODE)
+    {
 
-        DateTime timestamp = DateTime.Now;
-        string unixTime = ((DateTimeOffset)timestamp).ToUnixTimeSeconds().ToString();
+        string patern = GAMEMODE == "zen" ? "zen_" : "wave_";
 
-        if (GAMEMODE == "ZEN") {
-            path = Application.persistentDataPath + "/zen_" + unixTime;
-        } else {
-            path = Application.persistentDataPath + "/wave_" + unixTime;
+        var playerData = new List<PlayerData>();
+
+        string[] filenames = Directory.GetFiles(Application.persistentDataPath);
+
+        foreach (var filename in filenames)
+        {
+            if (filename.Contains(patern))
+            {
+                if (File.Exists(filename))
+                {
+                    BinaryFormatter formatter = new BinaryFormatter();
+                    FileStream stream = new FileStream(filename, FileMode.Open);
+
+                    PlayerData data = formatter.Deserialize(stream) as PlayerData;
+                    stream.Close();
+
+                    playerData.Add(data);
+                }
+                else
+                {
+                    Debug.LogError("Save file not found in " + filename);
+                }
+            }
         }
 
-        if (File.Exists(path)) {
-            BinaryFormatter formatter = new BinaryFormatter();
-            FileStream stream = new FileStream(path, FileMode.Open);
-
-            PlayerData data = formatter.Deserialize(stream) as PlayerData;
-            stream.Close();
-
-            return data;
-        } else {
-            Debug.LogError("Save file not found in " + path);
-            return null;
-        }
+        return playerData.ToArray();
     }
-    
 }

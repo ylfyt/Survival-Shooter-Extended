@@ -8,7 +8,8 @@ public class PlayerData
     public string name;
     public int score;
 
-    public PlayerData (string name_, int score_) {
+    public PlayerData(string name_, int score_)
+    {
         name = name_;
         score = score_;
     }
