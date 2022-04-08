@@ -5,7 +5,8 @@ using System;
 
 public class ScoreManager : MonoBehaviour
 {
-    public static float score;
+    public static float zenScore;
+    public static float waveScore;
     public static int finalScore;
     int multiplier = 1;
     public static bool isScoreOver = false;
@@ -17,18 +18,24 @@ public class ScoreManager : MonoBehaviour
     void Start ()
     {
         text = GetComponent <Text> ();
-        score = 0;
+        zenScore = 0;
+        waveScore = 0;
         Debug.Log(text);
     }
 
     void Update ()
     {
-        if (!isScoreOver) {
-            score += Time.deltaTime * multiplier;
-            finalScore = (int) score;
-            text.text = "Score: " + String.Format("{0:0}",score);
+        if (PlayerInfo.isZenMode)
+        {
+            if (!isScoreOver) {
+                zenScore += Time.deltaTime * multiplier;
+                finalScore = (int) zenScore;
+                text.text = "Score: " + String.Format("{0:0}",zenScore);
+            } else {
+                text.text = "Score: " + String.Format("{0:0}",zenScore);
+            }
         } else {
-            text.text = "Score: " + String.Format("{0:0}",score);
+            text.text = "Score: " + waveScore;
         }
         
     }
