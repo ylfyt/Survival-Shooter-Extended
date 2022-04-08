@@ -33,7 +33,7 @@ public class ShowGameOver : MonoBehaviour
 
         scoreText.text = "Score: " + score.ToString();
         levelText.enabled = true;
-        levelText.text = waveLevel.ToString();
+        levelText.text = "Level: " + waveLevel.ToString();
     }
 
     public void GoToReplay()

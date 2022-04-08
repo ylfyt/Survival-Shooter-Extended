@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOverScene.unity
     guid: 88236259e40de6f48920fea5e6ffff60
+  - enabled: 1
+    path: Assets/Scenes/WaveScoreboard.unity
+    guid: f2b815ae553041c44b7460f5402c9269
   m_configObjects: {}
