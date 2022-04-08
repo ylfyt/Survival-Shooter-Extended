@@ -12,8 +12,12 @@ public class BossAttack : MonoBehaviour
 
     float timeToAttack = 0f;
 
+    public int bossDamage = 35;
+
     Animator anim;
     EnemyHealth enemyHealth;
+    BoxCollider slashColl;
+    PlayerHealth playerHealth;
 
     bool attacking = false;
     void Start()
@@ -27,6 +31,8 @@ public class BossAttack : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         enemyHealth = GetComponent<EnemyHealth>();
+        slashColl = GetComponent<BoxCollider>();
+        playerHealth = player.GetComponent<PlayerHealth>();
     }
     void Update()
     {
@@ -42,7 +48,7 @@ public class BossAttack : MonoBehaviour
 
         float dist = Vector3.Distance(player.position, transform.position);
 
-        if (dist <= radius)
+        if (dist <= radius && !playerHealth.isDead)
         {
             rb.transform.LookAt(player);
             if (!attacking)
@@ -56,6 +62,26 @@ public class BossAttack : MonoBehaviour
             anim.SetBool("Attack", false);
             attacking = false;
         }
+    }
+
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player" && other.GetType().Name != "SphereCollider")
+        {
+            var playerHealth = other.GetComponent<PlayerHealth>();
+            playerHealth.TakeDamage(bossDamage);
+        }
+    }
+
+    public void SlashOn()
+    {
+        slashColl.enabled = true;
+    }
+
+    public void SlashOff()
+    {
+        slashColl.enabled = false;
     }
 
     void Attack()
