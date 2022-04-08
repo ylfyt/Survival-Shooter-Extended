@@ -3,11 +3,10 @@
 public class EnemyManager : MonoBehaviour
 {
     public PlayerHealth playerHealth;
-    // public GameObject enemy;
     public float spawnTime = 3f;
 
-    public int totalEnemies;
-    public static int remainingEnemies;
+    public int totalWeight;
+    public static int remainingEnemies = 0;
     public static int remainingWeight;
     public static int waveLevel;
     public bool isZenMode = true;
@@ -38,7 +37,7 @@ public class EnemyManager : MonoBehaviour
 
         if (!isZenMode)
         {
-            if (remainingEnemies <= 0)
+            if (remainingEnemies <= 0 )
             {
                 SpawnWave();
                 waveLevel++;
@@ -56,21 +55,23 @@ public class EnemyManager : MonoBehaviour
 
         int spawnEnemy = Random.Range(0, 5);
         Factory.FactoryMethod(spawnEnemy);
-        Debug.Log("WAVES remaining enemies : " + totalEnemies);
 
     }
 
     void SpawnWave()
     {
 
-        totalEnemies = 3 * waveLevel;
-        remainingEnemies = totalEnemies;
-        remainingWeight = totalEnemies;
-        while (totalEnemies > 0)
+        totalWeight = 3 * waveLevel;
+        
+        remainingWeight = totalWeight;
+        while (totalWeight > 0)
         {
-            Spawn();
-            totalEnemies--;
+            if (remainingWeight > 0)
+            {
+                Spawn();
+                remainingEnemies++;
+            }
+            totalWeight -= totalWeight - remainingWeight;
         }
-        Debug.Log("Wave Level : " + waveLevel);
     }
 }

@@ -156,6 +156,7 @@ MonoBehaviour:
   playerHealth: {fileID: 1509913240}
   spawnTime: 3
   totalEnemies: 0
+  isZenMode: 0
   factory: {fileID: 37760919}
 --- !u!4 &37760918
 Transform:
