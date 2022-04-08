@@ -12,7 +12,6 @@ public class UserSetup : MonoBehaviour
 
     void Start()
     {
-        PlayerPrefs.DeleteKey("username");
         string name = PlayerPrefs.GetString("username", "");
         if (name == "")
         {

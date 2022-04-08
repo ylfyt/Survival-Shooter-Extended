@@ -42,11 +42,13 @@ public class MenuManager : MonoBehaviour
 
     public void GoToZenMode()
     {
-        Debug.Log("Goto Zen mode");
+        PlayerPrefs.SetString("mode", "zen");
+        SceneManager.LoadScene(sceneName: "Level_01");
     }
 
     public void GoToWaveMode()
     {
-        Debug.Log("Goto wave mode");
+        PlayerPrefs.SetString("mode", "wave");
+        SceneManager.LoadScene(sceneName: "Level_01");
     }
 }
