@@ -12,12 +12,20 @@ public class EnemyFactory : MonoBehaviour, IFactory
 
     public GameObject FactoryMethod(int tag)
     {
-        if (tag == 2 && !isBossSummoned && EnemyManager.waveLevel % 3 == 0)
+        if (tag == 2)
         {
-            isBossSummoned = true;
-        } else if (isBossSummoned || EnemyManager.waveLevel % 3 != 0)
-        {
-            tag = Random.Range(0, 2);
+            if (EnemyManager.waveLevel % 3 == 0)
+            {
+                if (!isBossSummoned)
+                {
+                    isBossSummoned = true;
+                } else {
+                    tag = Random.Range(0, 2);
+                }
+            } else {
+                isBossSummoned = false;
+                tag = Random.Range(0, 2);
+            }
         }
 
         int pos;

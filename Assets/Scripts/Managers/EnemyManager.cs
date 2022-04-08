@@ -67,5 +67,6 @@ public class EnemyManager : MonoBehaviour
             Spawn();
             totalEnemies--;
         }
+        Debug.Log("Wave Level : " + waveLevel);
     }
 }
