@@ -51,7 +51,7 @@ public class EnemyManager : MonoBehaviour
             return;
         }
 
-        int spawnEnemy = Random.Range(0, 3);
+        int spawnEnemy = Random.Range(0, 5);
         Factory.FactoryMethod(spawnEnemy);
         Debug.Log("WAVES remaining enemies : " + totalEnemies);
 
@@ -60,7 +60,7 @@ public class EnemyManager : MonoBehaviour
     void SpawnWave()
     {
 
-        totalEnemies = 10 * waveLevel;
+        totalEnemies = 3 * waveLevel;
         remainingEnemies = totalEnemies;
         while (totalEnemies > 0)
         {
