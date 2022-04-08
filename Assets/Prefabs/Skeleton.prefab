@@ -386,6 +386,7 @@ GameObject:
   - component: {fileID: 1725711316}
   - component: {fileID: 1725711317}
   - component: {fileID: 821069102}
+  - component: {fileID: 1106981425}
   m_Layer: 7
   m_Name: Skeleton
   m_TagString: Enemy
@@ -618,6 +619,28 @@ MonoBehaviour:
   projectilePrefab: {fileID: 8857574912120920641, guid: a89f3881f4c04fb4fbe82bb6871d2104, type: 3}
   shootPoint: {fileID: 1854257310}
   projectileSpeed: 20
+--- !u!195 &1106981425
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739337188927912821}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &864335275255116140
 GameObject:
   m_ObjectHideFlags: 0
