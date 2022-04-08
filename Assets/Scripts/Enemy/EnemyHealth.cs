@@ -72,6 +72,11 @@ public class EnemyHealth : MonoBehaviour
         Debug.Log(EnemyManager.remainingEnemies);
     }
 
+    public void EnemyDeath()
+    {
+        Death();
+    }
+
 
     public void StartSinking()
     {
