@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ZenScoreboardManager : MonoBehaviour
+public class ScoreboardManager : MonoBehaviour
 {
     public void ExitScoreboard()
     {

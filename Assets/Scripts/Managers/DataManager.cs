@@ -8,7 +8,7 @@ using System;
 public static class DataManager
 {
 
-    public static void SaveData(string name_, int score_, string gameMode)
+    public static void SaveData(string name_, int score_)
     {
         string path;
 
@@ -16,7 +16,7 @@ public static class DataManager
         string unixTime = ((DateTimeOffset)timestamp).ToUnixTimeSeconds().ToString();
 
         BinaryFormatter formatter = new BinaryFormatter();
-        if (gameMode == GAME_MODE.ZEN)
+        if (PlayerInfo.isZenMode)
         {
             path = Application.persistentDataPath + "/zen_" + unixTime;
         }
