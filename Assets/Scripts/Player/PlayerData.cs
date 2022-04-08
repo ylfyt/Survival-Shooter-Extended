@@ -13,12 +13,6 @@ public class PlayerData
     {
         name = name_;
         score = score_;
-        if (EnemyManager.isZenMode)
-        {
-            waveLevel = 0;
-        } else {
-            waveLevel = EnemyManager.waveLevel;
-        }
     }
 
 }

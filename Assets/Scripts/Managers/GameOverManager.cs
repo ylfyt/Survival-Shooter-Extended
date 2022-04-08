@@ -23,7 +23,7 @@ public class GameOverManager : MonoBehaviour
 
             if (!isSaved)
             {
-                DataManager.SaveData(PlayerInfo.name, ScoreManager.finalScore);
+                DataManager.SaveData(PlayerInfo.name, ScoreManager.finalScore, "ZEN");
                 isSaved = true;
             }
 

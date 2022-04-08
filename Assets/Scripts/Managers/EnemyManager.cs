@@ -10,7 +10,7 @@ public class EnemyManager : MonoBehaviour
     public static int remainingEnemies;
     public static int remainingWeight;
     public static int waveLevel;
-    public static bool isZenMode = true;
+    public bool isZenMode = true;
 
     [SerializeField]
     MonoBehaviour factory;
