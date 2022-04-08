@@ -31,7 +31,7 @@ public class GameOverManager : MonoBehaviour
 
             if (restartTimer >= restartDelay)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                GoToGameOverScene();
             }
         }
     }
@@ -43,5 +43,16 @@ public class GameOverManager : MonoBehaviour
             return;
         }
         canvasAnimator.SetTrigger("Warning");
+    }
+
+    public void GoToGameOverScene()
+    {
+        PlayerPrefs.SetString("username", PlayerInfo.name);
+        string mode = PlayerInfo.isZenMode ? "zen" : "wave";
+        PlayerPrefs.SetString("mode", mode);
+        PlayerPrefs.SetInt("score", ScoreManager.finalScore);
+        PlayerPrefs.SetInt("wave-level", EnemyManager.waveLevel);
+
+        SceneManager.LoadScene(sceneName: "GameOverScene");
     }
 }
