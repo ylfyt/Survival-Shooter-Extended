@@ -8,6 +8,7 @@ public class EnemyManager : MonoBehaviour
 
     public int totalEnemies;
     public static int remainingEnemies;
+    public static int remainingWeight;
     public static int waveLevel;
     public static bool isZenMode = true;
 
@@ -62,6 +63,7 @@ public class EnemyManager : MonoBehaviour
 
         totalEnemies = 3 * waveLevel;
         remainingEnemies = totalEnemies;
+        remainingWeight = totalEnemies;
         while (totalEnemies > 0)
         {
             Spawn();
