@@ -185,8 +185,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab:
-  - {fileID: 2063190824526573234, guid: 948d38265e29b2a47adb92fd1e1d085e, type: 3}
-  - {fileID: 7274298803628058814, guid: cb1ac869605d06c489504818c0f3b44e, type: 3}
+  - {fileID: 1818861082154570, guid: 5e45c8f884f6d124ea0499aae7fdbec8, type: 3}
+  - {fileID: 739337188927912821, guid: 102150e0373cc2849a99639e45896886, type: 3}
   - {fileID: 8490436512523083310, guid: 9d3ac1e9045369548bdc247cfc16bbcc, type: 3}
   enemyPositions:
   - {fileID: 2058135648}

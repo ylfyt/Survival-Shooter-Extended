@@ -30541,7 +30541,7 @@ MonoBehaviour:
   currentHealth: 0
   sinkSpeed: 2.5
   scoreValue: 10
-  deathClip: {fileID: 8300000, guid: 8c615fd0429f34edf85539d70279360d, type: 3}
+  deathClip: {fileID: 8300000, guid: fa7f046ce321d4021b5e753bf1152916, type: 3}
 --- !u!114 &799674108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30554,7 +30554,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5619f0223bda9de4385d82fe834cd9e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boomDamage: 0
+  boomDamage: 40
 --- !u!1 &1846604720013428
 GameObject:
   m_ObjectHideFlags: 0

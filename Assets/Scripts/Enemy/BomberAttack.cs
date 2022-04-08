@@ -10,7 +10,7 @@ public class BomberAttack : MonoBehaviour
 
     bool isDead = false;
 
-    public int boomDamage;
+    public int boomDamage = 10;
 
     void Start()
     {
@@ -25,8 +25,6 @@ public class BomberAttack : MonoBehaviour
             {
                 isDead = true;
                 anim.SetTrigger("Attack");
-                enemyHealth.EnemyDeath();
-
                 playerHealth = other.GetComponent<PlayerHealth>();
             }
         }
@@ -34,9 +32,11 @@ public class BomberAttack : MonoBehaviour
 
     public void BoomPlayer()
     {
-        if (playerHealth != null)
+        if (playerHealth == null)
         {
-            playerHealth.TakeDamage(boomDamage);
+            return;
         }
+        enemyHealth.EnemyDeath();
+        playerHealth.TakeDamage(boomDamage);
     }
 }
