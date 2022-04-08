@@ -12,7 +12,6 @@ public class UserSetup : MonoBehaviour
 
     void Start()
     {
-        PlayerPrefs.DeleteKey("username");
         string name = PlayerPrefs.GetString("username", "");
         if (name == "")
         {
@@ -37,6 +36,10 @@ public class UserSetup : MonoBehaviour
 
     public void ExitButton()
     {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
         Application.Quit();
+#endif
     }
 }

@@ -21,8 +21,14 @@ public class GameOverManager : MonoBehaviour
             isGameOver = true;
             ScoreManager.isScoreOver = true;
 
+<<<<<<< HEAD
             if (!isSaved) {
                 DataManager.SaveData("dummy1", ScoreManager.finalScore, "ZEN");
+=======
+            if (!isSaved)
+            {
+                DataManager.SaveData(PlayerInfo.name, ScoreManager.finalScore);
+>>>>>>> 78e7d3fc6ebfb948d942550efe00584174fd720d
                 isSaved = true;
             }
 

@@ -17,6 +17,8 @@ public class EnemyManager : MonoBehaviour
     IFactory Factory { get { return factory as IFactory; } }
     void Start()
     {
+        isZenMode = PlayerInfo.isZenMode;
+
         if (isZenMode)
         {
             InvokeRepeating("Spawn", spawnTime, spawnTime);
