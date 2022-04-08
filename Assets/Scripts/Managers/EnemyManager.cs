@@ -9,7 +9,7 @@ public class EnemyManager : MonoBehaviour
     public int totalEnemies;
     public static int remainingEnemies;
     public static int waveLevel;
-    public bool isZenMode = true;
+    public static bool isZenMode = true;
 
     [SerializeField]
     MonoBehaviour factory;
