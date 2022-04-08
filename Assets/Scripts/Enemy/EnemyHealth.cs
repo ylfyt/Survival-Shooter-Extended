@@ -70,6 +70,7 @@ public class EnemyHealth : MonoBehaviour
         enemyAudio.clip = deathClip;
         enemyAudio.Play();
         EnemyManager.remainingEnemies--;
+        ScoreManager.waveScore += scoreValue;
         Debug.Log(EnemyManager.remainingEnemies);
     }
 

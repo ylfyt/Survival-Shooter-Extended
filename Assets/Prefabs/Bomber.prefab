@@ -30540,7 +30540,7 @@ MonoBehaviour:
   startingHealth: 40
   currentHealth: 0
   sinkSpeed: 2.5
-  scoreValue: 10
+  scoreValue: 20
   deathClip: {fileID: 8300000, guid: fa7f046ce321d4021b5e753bf1152916, type: 3}
 --- !u!114 &799674108
 MonoBehaviour:

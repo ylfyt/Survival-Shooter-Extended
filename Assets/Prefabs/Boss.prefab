@@ -473,7 +473,7 @@ MonoBehaviour:
   startingHealth: 500
   currentHealth: 0
   sinkSpeed: 2.5
-  scoreValue: 10
+  scoreValue: 50
   deathClip: {fileID: 8300000, guid: 8c615fd0429f34edf85539d70279360d, type: 3}
 --- !u!114 &2401968236150090879
 MonoBehaviour:
@@ -522,7 +522,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3.5
-  attackRate: 0.3
   bossDamage: 40
 --- !u!1 &2401968234347126028
 GameObject:
