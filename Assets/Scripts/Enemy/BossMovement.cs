@@ -10,7 +10,6 @@ public class BossMovement : MonoBehaviour
     UnityEngine.AI.NavMeshAgent nav;
     Animator anim;
 
-
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -33,7 +32,11 @@ public class BossMovement : MonoBehaviour
         }
         if (enemyHealth.currentHealth > 0 && !playerHealth.isDead)
         {
-            nav.SetDestination(player.position);
+            if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+            {
+                nav.SetDestination(player.position);
+            }
+
             if (nav.remainingDistance <= nav.stoppingDistance)
             {
                 anim.SetBool("Walk", false);
