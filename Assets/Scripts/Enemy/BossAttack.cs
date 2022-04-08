@@ -7,11 +7,6 @@ public class BossAttack : MonoBehaviour
     public float radius = 3.5f;
     Transform player;
     Rigidbody rb;
-
-    public float attackRate = 0.1f;
-
-    float timeToAttack = 0f;
-
     public int bossDamage = 35;
 
     Animator anim;

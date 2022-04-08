@@ -25,4 +25,28 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName: "ZenScoreboard");
     }
+
+    public void GoToWaveScoreboard()
+    {
+        SceneManager.LoadScene(sceneName: "WaveScoreboard");
+    }
+
+    public void ExitMenu()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
+
+    public void GoToZenMode()
+    {
+        Debug.Log("Goto Zen mode");
+    }
+
+    public void GoToWaveMode()
+    {
+        Debug.Log("Goto wave mode");
+    }
 }
