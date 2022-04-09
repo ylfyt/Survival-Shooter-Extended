@@ -4,6 +4,7 @@ using System.Collections.Generic;
 public class PlayerShooting : MonoBehaviour
 {
     public PlayerAttribute playerAttribute;
+    public GameObject hitParticle;
     public int damagePerShot = 10;
     public float timeBetweenBullets = 0.2f;
     public float range = 100f;
@@ -125,6 +126,8 @@ public class PlayerShooting : MonoBehaviour
             }
 
             gunLine.SetPosition(1, shootHit.point);
+            var hitEffect = Instantiate(hitParticle, shootHit.point, Quaternion.LookRotation(shootHit.normal));
+            Destroy(hitEffect, .3f);
         }
         else
         {
