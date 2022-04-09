@@ -1058,6 +1058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1509913240}
+  warningText: {fileID: 1086032144}
   restartDelay: 5
   canvasAnimator: {fileID: 360206200}
 --- !u!4 &688119341
@@ -1694,8 +1695,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 223.3319, y: 110.9384}
+  m_AnchoredPosition: {x: 2, y: -0.25}
+  m_SizeDelta: {x: 455.6358, y: 110.9384}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1086032144
 MonoBehaviour:
@@ -1718,8 +1719,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 90
+    m_Font: {fileID: 12800000, guid: 46238fb1ad7a7a84ba8954c1c860994c, type: 3}
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -1730,7 +1731,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '!'
+  m_Text: '! 20 m'
 --- !u!222 &1086032145
 CanvasRenderer:
   m_ObjectHideFlags: 0

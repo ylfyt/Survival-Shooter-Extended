@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameOverManager : MonoBehaviour
 {
     public PlayerHealth playerHealth;
+    public Text warningText;
     public float restartDelay = 5f;
 
 
@@ -36,12 +38,14 @@ public class GameOverManager : MonoBehaviour
         }
     }
 
-    public void ShowWarning()
+    public void ShowWarning(float distance)
     {
         if (isGameOver)
         {
             return;
         }
+        var text = $"! {Mathf.RoundToInt(distance)}m";
+        warningText.text = text;
         canvasAnimator.SetTrigger("Warning");
     }
 
