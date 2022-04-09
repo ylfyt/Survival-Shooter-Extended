@@ -11,6 +11,7 @@ public class EnemyManager : MonoBehaviour
     public static int waveLevel;
     public static int finalLevel = 6;
     public bool isZenMode = true;
+    public int weightPerLevel = 10;
 
     [SerializeField]
     MonoBehaviour factory;
@@ -65,8 +66,7 @@ public class EnemyManager : MonoBehaviour
 
     void SpawnWave()
     {
-
-        totalWeight = 3 * waveLevel;
+        totalWeight = weightPerLevel * waveLevel;
         
         remainingWeight = totalWeight;
         while (totalWeight > 0)

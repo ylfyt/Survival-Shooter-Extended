@@ -21,7 +21,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if (enemyHealth == null)
         {
-            Debug.Log("EnemyHealt is null");
+            Debug.Log("EnemyHealth is null");
         }
         if (playerHealth == null)
         {
