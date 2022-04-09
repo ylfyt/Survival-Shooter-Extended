@@ -7,7 +7,8 @@ public class BomberAttack : MonoBehaviour
     Animator anim;
     EnemyHealth enemyHealth;
     PlayerHealth playerHealth;
-
+    public AudioClip deathClip;
+    AudioSource enemyAudio;
     bool isDead = false;
 
     public int boomDamage = 10;
@@ -16,6 +17,7 @@ public class BomberAttack : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         enemyHealth = GetComponent<EnemyHealth>();
+        enemyAudio = GetComponent<AudioSource>();
     }
     void OnTriggerEnter(Collider other)
     {
@@ -36,7 +38,24 @@ public class BomberAttack : MonoBehaviour
         {
             return;
         }
-        enemyHealth.EnemyDeath();
         playerHealth.TakeDamage(boomDamage);
+    }
+
+    public void KillBomber()
+    {
+        isDead = true;
+        enemyHealth.currentHealth = 0;
+
+        GetComponent<CapsuleCollider>().isTrigger = true;
+
+        enemyAudio.clip = deathClip;
+        enemyAudio.Play();
+        EnemyManager.remainingEnemies--;
+        ScoreManager.waveScore += enemyHealth.scoreValue;
+
+        GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+        GetComponent<Rigidbody>().isKinematic = true;
+        enemyHealth.SetIsSinking();
+        Destroy(gameObject, 2f);
     }
 }

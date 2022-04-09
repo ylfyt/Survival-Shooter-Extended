@@ -34,6 +34,11 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
+    public void SetIsSinking()
+    {
+        isSinking = true;
+    }
+
 
     public void TakeDamage(int amount, Vector3 hitPoint)
     {
