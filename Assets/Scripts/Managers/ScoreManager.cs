@@ -35,6 +35,7 @@ public class ScoreManager : MonoBehaviour
             }
             level.text = "";
         } else {
+            finalScore = (int) waveScore;
             score.text = "Score: " + waveScore;
             level.text = "Level: " + (EnemyManager.waveLevel-1);
         }
