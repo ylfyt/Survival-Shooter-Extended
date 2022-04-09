@@ -43,7 +43,6 @@ public class EnemyManager : MonoBehaviour
             } else {
                 if (remainingEnemies <= 0 )
                 {
-                    Debug.Log("CURRENT WAVE LEVEL IS : " + waveLevel);
                     SpawnWave();    
                     waveLevel++;   
                 }
@@ -81,7 +80,6 @@ public class EnemyManager : MonoBehaviour
     }
 
     bool IsWinning() {
-        Debug.Log("CURRENT WAVE LEVEL IS : " + waveLevel);
-        return (waveLevel-1 > 12);
+        return (waveLevel-1 > 2);
     }
 }

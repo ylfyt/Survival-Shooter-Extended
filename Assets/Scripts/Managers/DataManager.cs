@@ -30,7 +30,6 @@ public static class DataManager
 
         formatter.Serialize(stream, data);
         stream.Close();
-        Debug.Log(path);
     }
 
     public static PlayerData[] LoadPlayer(string gameMode)

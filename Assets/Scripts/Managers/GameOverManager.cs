@@ -21,10 +21,8 @@ public class GameOverManager : MonoBehaviour
     {
         if (isWinning) {
             gameOverText.text = "You Win !";
-            gameOverText.color = Color.green;
-            Debug.Log("YOU WINNNNNNNNNNNNNNNNNN");
         }
-        // Debug.Log(isWinning);
+        
         if (playerHealth.isDead || isWinning)
         {
             canvasAnimator.SetBool("GameOver", true);
