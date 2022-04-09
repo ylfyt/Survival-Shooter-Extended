@@ -6,7 +6,7 @@ public class WeaponOrb : MonoBehaviour
 {
     public Transform playershooting;
     public int val = 1;
-    public string type = "";
+    public string type = "Direction";
 
     void OnTriggerEnter (Collider other){
         if(other.tag == "Player" && other.GetType().Name != "SphereCollider"
@@ -19,21 +19,23 @@ public class WeaponOrb : MonoBehaviour
 
     void getUpgrade(Collider player)
     {
-        var playerAttribute = player.GetComponent<PlayerAttribute>();
-        if(playerAttribute == null){
+        var playerShooting = player.GetComponentInChildren<PlayerShooting>();
+ 
+ 
+        if(playerShooting == null){
             Debug.Log("Gagal");
         }
         else{
-            Debug.Log("Success");
-            // switch(type) 
-            // {
-            // case "Speed":
-            //     playerAttribute.speed += 1; 
-            //     break;
-            // default:
-            //     playerAttribute.power += 1; 
-            //     break;
-            // }
+            Debug.Log(playerShooting.timeBetweenBullets);
+            switch(type) 
+            {
+            case "Faster":
+                playerShooting.timeBetweenBullets -= 0.03f; 
+                break;
+            default:
+                playerShooting.gunDirectionLevel += 1; 
+                break;
+            }
             Destroy(gameObject);
         }
     }
