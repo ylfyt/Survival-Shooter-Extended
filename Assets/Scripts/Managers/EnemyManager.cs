@@ -8,7 +8,7 @@ public class EnemyManager : MonoBehaviour
     public int totalWeight;
     public static int remainingEnemies = 0;
     public static int remainingWeight;
-    public static int waveLevel = 1;
+    public static int waveLevel;
     public bool isZenMode = true;
 
     [SerializeField]
@@ -24,6 +24,7 @@ public class EnemyManager : MonoBehaviour
         }
         else
         {
+            waveLevel = 1;
             SpawnWave();
             waveLevel++;
         }
