@@ -60,6 +60,11 @@ public class PlayerShooting : MonoBehaviour
         }
     }
 
+    public void setDirection(LineRenderer line, int degree){
+        line.SetPosition(0, gunPoint.position);
+        line.SetPosition(1, gunPoint.position + Quaternion.Euler(0, degree, 0) * gunPoint.forward * range );
+    }
+
     void Shoot()
     {
         timer = 0f;
@@ -75,35 +80,28 @@ public class PlayerShooting : MonoBehaviour
 
         if(gunDirectionLevel == 2 ){
             gunLine2.enabled = true;
-            gunLine2.SetPosition(0, gunPoint.position);
-            gunLine2.SetPosition(1, gunPoint.position + Quaternion.Euler(0, -23, 0) * gunPoint.forward * range );
-
+            setDirection(gunLine2, -23);
 
             gunLine3.enabled = true;
-            gunLine3.SetPosition(0, gunPoint.position);
-            gunLine3.SetPosition(1, gunPoint.position + Quaternion.Euler(0, 23, 0) * gunPoint.forward * range );
+            setDirection(gunLine3, 23);
 
             gunLineList.Add(gunLine2);
             gunLineList.Add(gunLine3);
         }
+
         else if (gunDirectionLevel == 3){
             gunLine2.enabled = true;
-            gunLine2.SetPosition(0, gunPoint.position);
-            gunLine2.SetPosition(1, gunPoint.position + Quaternion.Euler(0, -23, 0) * gunPoint.forward * range );
-
+            setDirection(gunLine2, -23);
 
             gunLine3.enabled = true;
-            gunLine3.SetPosition(0, gunPoint.position);
-            gunLine3.SetPosition(1, gunPoint.position + Quaternion.Euler(0, 23, 0) * gunPoint.forward * range );
+            setDirection(gunLine3, 23);
 
             gunLine4.enabled = true;
-            gunLine4.SetPosition(0, gunPoint.position);
-            gunLine4.SetPosition(1, gunPoint.position + Quaternion.Euler(0, -45, 0) * gunPoint.forward * range );
-
+            setDirection(gunLine4, -45);
 
             gunLine5.enabled = true;
-            gunLine5.SetPosition(0, gunPoint.position);
-            gunLine5.SetPosition(1, gunPoint.position + Quaternion.Euler(0, 45, 0) * gunPoint.forward * range );
+            setDirection(gunLine5, 45);
+
 
             gunLineList.Add(gunLine4);
             gunLineList.Add(gunLine5);
