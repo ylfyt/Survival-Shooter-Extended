@@ -54,15 +54,17 @@ public class PlayerShooting : MonoBehaviour
 
     public void DisableEffects()
     {
-         foreach (var G in gunLineList)
+        gunLight.enabled = false;
+        foreach (var G in gunLineList)
         {
             G.enabled = false;
         }
     }
 
-    public void setDirection(LineRenderer line, int degree){
+    public void setDirection(LineRenderer line, int degree)
+    {
         line.SetPosition(0, gunPoint.position);
-        line.SetPosition(1, gunPoint.position + Quaternion.Euler(0, degree, 0) * gunPoint.forward * range );
+        line.SetPosition(1, gunPoint.position + Quaternion.Euler(0, degree, 0) * gunPoint.forward * range);
     }
 
     void Shoot()
@@ -78,7 +80,8 @@ public class PlayerShooting : MonoBehaviour
         gunLine.SetPosition(0, gunPoint.position);
         gunLineList.Add(gunLine);
 
-        if(gunDirectionLevel == 2 ){
+        if (gunDirectionLevel == 2)
+        {
             gunLine2.enabled = true;
             setDirection(gunLine2, -23);
 
@@ -89,7 +92,8 @@ public class PlayerShooting : MonoBehaviour
             gunLineList.Add(gunLine3);
         }
 
-        else if (gunDirectionLevel == 3){
+        else if (gunDirectionLevel == 3)
+        {
             gunLine2.enabled = true;
             setDirection(gunLine2, -23);
 
@@ -107,7 +111,7 @@ public class PlayerShooting : MonoBehaviour
             gunLineList.Add(gunLine5);
         }
 
-        
+
         shootRay.origin = gunPoint.position;
         shootRay.direction = gunPoint.forward;
 

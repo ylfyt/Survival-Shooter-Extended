@@ -2,20 +2,21 @@
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 6f;
+    public float speedMultiplier = 1f;
     Vector3 movement;
     Animator anim;
     Rigidbody rb;
     int floorMask;
     float camRayLength = 100f;
+    PlayerAttribute playerAttribute;
 
     private void Awake()
     {
         floorMask = LayerMask.GetMask("Floor");
-
         anim = GetComponent<Animator>();
-
         rb = GetComponent<Rigidbody>();
+        playerAttribute = GetComponent<PlayerAttribute>();
+
     }
 
     private void FixedUpdate()
@@ -32,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
     {
         movement.Set(h, 0f, v);
 
-        movement = movement.normalized * speed * Time.deltaTime;
+        movement = movement.normalized * speedMultiplier * playerAttribute.speed * Time.deltaTime;
 
         rb.MovePosition(transform.position + movement);
     }
