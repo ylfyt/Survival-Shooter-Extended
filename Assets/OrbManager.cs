@@ -19,18 +19,22 @@ public class OrbManager : MonoBehaviour
 
     IEnumerator OrbDrop(){
         while(true){
-            xPos = Random.Range(-10, -24);
-            zPos = Random.Range(-10, -24);
+            xPos = Random.Range(-22, 28);
+            zPos = Random.Range(-21, 25);
             orbType = Random.Range(1, 3);
+            GameObject hitEffect;
             switch(orbType){
                 case 1:
-                    Instantiate(PowerOrb, new Vector3(xPos, 0.6f, zPos), Quaternion.identity);
+                    hitEffect = Instantiate(PowerOrb, new Vector3(xPos, 0.6f, zPos), Quaternion.identity);
+                    Destroy(hitEffect, 12f);
                     break;
                 case 2:
-                    Instantiate(SpeedOrb, new Vector3(xPos, 0.6f, zPos), Quaternion.identity);                    
+                    hitEffect = Instantiate(SpeedOrb, new Vector3(xPos, 0.6f, zPos), Quaternion.identity);
+                    Destroy(hitEffect, 12f);               
                     break;
                 default:
-                    Instantiate(HealthOrb, new Vector3(xPos, 0.6f, zPos), Quaternion.identity);                    
+                    hitEffect = Instantiate(HealthOrb, new Vector3(xPos, 0.6f, zPos), Quaternion.identity);       
+                    Destroy(hitEffect, 12f);             
                     break;
             }
             
