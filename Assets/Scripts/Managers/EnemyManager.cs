@@ -8,7 +8,7 @@ public class EnemyManager : MonoBehaviour
     public int totalWeight;
     public static int remainingEnemies = 0;
     public static int remainingWeight;
-    public static int waveLevel;
+    public static int waveLevel = 1;
     public bool isZenMode = true;
 
     [SerializeField]
@@ -24,7 +24,6 @@ public class EnemyManager : MonoBehaviour
         }
         else
         {
-            waveLevel = 1;
             SpawnWave();
             waveLevel++;
         }
@@ -37,10 +36,16 @@ public class EnemyManager : MonoBehaviour
 
         if (!isZenMode)
         {
-            if (remainingEnemies <= 0 )
-            {
-                SpawnWave();
-                waveLevel++;
+            if (IsWinning()) { 
+                waveLevel--;
+                GameOverManager.isWinning = true; 
+            } else {
+                if (remainingEnemies <= 0 )
+                {
+                    Debug.Log("CURRENT WAVE LEVEL IS : " + waveLevel);
+                    SpawnWave();    
+                    waveLevel++;   
+                }
             }
         }
     }
@@ -52,7 +57,6 @@ public class EnemyManager : MonoBehaviour
         {
             return;
         }
-
         int spawnEnemy = Random.Range(0, 5);
         Factory.FactoryMethod(spawnEnemy);
 
@@ -73,5 +77,10 @@ public class EnemyManager : MonoBehaviour
             }
             totalWeight -= totalWeight - remainingWeight;
         }
+    }
+
+    bool IsWinning() {
+        Debug.Log("CURRENT WAVE LEVEL IS : " + waveLevel);
+        return (waveLevel-1 > 12);
     }
 }

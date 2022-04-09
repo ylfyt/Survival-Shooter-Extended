@@ -6,6 +6,7 @@ public class GameOverManager : MonoBehaviour
 {
     public PlayerHealth playerHealth;
     public Text warningText;
+    public Text gameOverText;
     public float restartDelay = 5f;
 
 
@@ -14,10 +15,17 @@ public class GameOverManager : MonoBehaviour
 
     bool isGameOver = false;
     bool isSaved = false;
+    public static bool isWinning = false;
 
     void Update()
     {
-        if (playerHealth.isDead)
+        if (isWinning) {
+            gameOverText.text = "You Win !";
+            gameOverText.color = Color.green;
+            Debug.Log("YOU WINNNNNNNNNNNNNNNNNN");
+        }
+        // Debug.Log(isWinning);
+        if (playerHealth.isDead || isWinning)
         {
             canvasAnimator.SetBool("GameOver", true);
             isGameOver = true;

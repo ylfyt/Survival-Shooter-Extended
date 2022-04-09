@@ -1127,6 +1127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1509913240}
   warningText: {fileID: 1086032144}
+  gameOverText: {fileID: 1888692063}
   restartDelay: 5
   canvasAnimator: {fileID: 360206200}
 --- !u!4 &688119341
