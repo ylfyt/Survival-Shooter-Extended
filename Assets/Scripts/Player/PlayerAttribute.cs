@@ -56,9 +56,9 @@ public class PlayerAttribute : MonoBehaviour
     {
         if (health <= 0)
             health = 0;
-        powerText.text = "P: " + _power.ToString();
-        healthText.text = "H: " + _health.ToString();
-        speedText.text = "S: " + _speed.ToString();
+        powerText.text = $"P: {_power} / {maxPower}";
+        healthText.text = $"H: {_health} / {maxHealth}";
+        speedText.text = $"S: {_speed} / {maxSpeed}";
     }
 
     void UpgradePower(int amount)
