@@ -59,6 +59,7 @@ public class GameOverManager : MonoBehaviour
 
     public void GoToGameOverScene()
     {
+        Cursor.lockState = CursorLockMode.None;
         PlayerPrefs.SetString("username", PlayerInfo.name);
         string mode = PlayerInfo.isZenMode ? "zen" : "wave";
         PlayerPrefs.SetString("mode", mode);
