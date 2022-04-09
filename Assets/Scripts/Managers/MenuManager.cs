@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class MenuManager : MonoBehaviour
 {
     string username = "";
+    public Toggle fpsToggle;
     public Text welcomeText;
     void Start()
     {
@@ -41,12 +42,14 @@ public class MenuManager : MonoBehaviour
 
     public void GoToZenMode()
     {
+        PlayerPrefs.SetString("view", fpsToggle.isOn ? "first" : "third");
         PlayerPrefs.SetString("mode", "zen");
         SceneManager.LoadScene(sceneName: "Level_01");
     }
 
     public void GoToWaveMode()
     {
+        PlayerPrefs.SetString("view", fpsToggle.isOn ? "first" : "third");
         PlayerPrefs.SetString("mode", "wave");
         SceneManager.LoadScene(sceneName: "Level_01");
     }
