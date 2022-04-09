@@ -12,15 +12,14 @@ public class ScoreManager : MonoBehaviour
     public static bool isScoreOver = false;
 
 
-    Text text;
+    public Text score;
+    public Text level;
 
 
     void Start ()
     {
-        text = GetComponent <Text> ();
         zenScore = 0;
         waveScore = 0;
-        Debug.Log(text);
     }
 
     void Update ()
@@ -30,12 +29,14 @@ public class ScoreManager : MonoBehaviour
             if (!isScoreOver) {
                 zenScore += Time.deltaTime * multiplier;
                 finalScore = (int) zenScore;
-                text.text = "Score: " + String.Format("{0:0}",zenScore);
+                score.text = "Score: " + String.Format("{0:0}",zenScore);
             } else {
-                text.text = "Score: " + String.Format("{0:0}",zenScore);
+                score.text = "Score: " + String.Format("{0:0}",zenScore);
             }
+            level.text = "";
         } else {
-            text.text = "Score: " + waveScore;
+            score.text = "Score: " + waveScore;
+            level.text = "Level: " + EnemyManager.waveLevel;
         }
         
     }
