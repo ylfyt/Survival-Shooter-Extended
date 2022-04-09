@@ -7,7 +7,7 @@ public class MONSTER_WEIGHT
     public const int ZOMBUNNY = 1;
     public const int ZOMBEAR = 1;
     public const int ZOMHELLEPHANT = 3;
-    public const int BOSS = 5;
+    public const int BOSS = 0;
 
     public static int GetWeightByTag(int tag)
     {

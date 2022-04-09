@@ -9,6 +9,7 @@ public class EnemyManager : MonoBehaviour
     public static int remainingEnemies = 0;
     public static int remainingWeight;
     public static int waveLevel;
+    public static int finalLevel = 6;
     public bool isZenMode = true;
 
     [SerializeField]
@@ -80,6 +81,6 @@ public class EnemyManager : MonoBehaviour
     }
 
     bool IsWinning() {
-        return (waveLevel-1 > 2);
+        return (waveLevel-1 > finalLevel);
     }
 }
