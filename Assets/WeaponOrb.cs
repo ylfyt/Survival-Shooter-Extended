@@ -43,13 +43,8 @@ public class WeaponOrb : MonoBehaviour
                     playerShooting.gunDirectionLevel += 1;
                     break;
             }
-            var upgrades = GameObject.FindGameObjectsWithTag("WeaponUpgrade");
 
-            foreach (var u in upgrades)
-            {
-                Destroy(u);
-            }
-
+            Destroy(gameObject.transform.parent.gameObject);
         }
     }
 }

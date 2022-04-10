@@ -157,6 +157,7 @@ MonoBehaviour:
   spawnTime: 3
   Diagonal: {fileID: 0}
   Speed: {fileID: 0}
+  weaponManager: {fileID: 0}
   totalWeight: 0
   isZenMode: 0
   weightPerLevel: 10
@@ -1051,9 +1052,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 740d3c9da1af1ee49894f4e43fcfe767, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Diagonal: {fileID: 5874108024064317340, guid: 43ce42d985e9f404e9463c2dac1b4649, type: 3}
-  Faster: {fileID: 7098508659203559947, guid: a06a8bdf200ebee41b3eb2149a104812, type: 3}
-  dropRate: 0.2
+  weaponUpgradePrefab: {fileID: 8995600173152765421, guid: 1706737d220118d43b048d5a9a4d6b2c, type: 3}
+  dropRate: 0.04
 --- !u!1 &735472279
 GameObject:
   m_ObjectHideFlags: 0
@@ -6853,9 +6853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff5a91d3c91bd124c94287976126e95f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minPower: 1
   maxPower: 8
-  minSpeed: 3
   maxSpeed: 10
   maxHealth: 1000
   powerText: {fileID: 1807752955}

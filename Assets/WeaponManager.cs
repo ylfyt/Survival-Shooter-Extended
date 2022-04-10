@@ -5,32 +5,36 @@ using UnityEngine;
 public class WeaponManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject Diagonal;
-    public GameObject Faster;
+    public GameObject weaponUpgradePrefab;
 
-    public float dropRate = 0.1f;
-    float timeToDrop = 10;
+    public float dropRate = 0.04f;
+    float timeToDrop = 25f;
 
     void Start()
     {
     }
 
-    void WeaponUpgrade(){
-        var diagonalUpgrade = Instantiate(Diagonal, new Vector3(-10, 0.6f, 0), Quaternion.identity);
-        var fasterUpgrade = Instantiate(Faster, new Vector3(0, 0.6f, 0), Quaternion.identity);
+    void WeaponUpgrade()
+    {
+        var instance = Instantiate(weaponUpgradePrefab, new Vector3(0f, 0f, 0f), Quaternion.identity);
 
-        Destroy(diagonalUpgrade, 12f);
-        Destroy(fasterUpgrade, 12f);
-
-       
-
-
+        Destroy(instance, 12f);
     }
 
-    void Update(){
-        if(Time.time >= timeToDrop){
-            timeToDrop += 1 / dropRate ;
-            WeaponUpgrade();
+    public void SpawnWeaponUpForWaveMode()
+    {
+        WeaponUpgrade();
+    }
+
+    void Update()
+    {
+        if (PlayerInfo.isZenMode)
+        {
+            if (Time.time >= timeToDrop)
+            {
+                timeToDrop = timeToDrop + 1 / dropRate;
+                WeaponUpgrade();
+            }
         }
     }
 }

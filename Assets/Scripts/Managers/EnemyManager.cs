@@ -8,6 +8,7 @@ public class EnemyManager : MonoBehaviour
 
     public GameObject Diagonal;
     public GameObject Speed;
+    public WeaponManager weaponManager;
 
     public int totalWeight;
     public static int remainingEnemies = 0;
@@ -28,7 +29,7 @@ public class EnemyManager : MonoBehaviour
         {
             InvokeRepeating("Spawn", spawnTime, spawnTime);
             InvokeRepeating("Spawn", spawnTime, spawnTime);
-            
+
         }
         else
         {
@@ -56,6 +57,7 @@ public class EnemyManager : MonoBehaviour
             {
                 if (remainingEnemies <= 0)
                 {
+                    weaponManager.SpawnWeaponUpForWaveMode();
                     SpawnWave();
                     waveLevel++;
                 }
