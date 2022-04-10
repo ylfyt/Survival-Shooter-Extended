@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class WeaponOrb : MonoBehaviour
 {
-    public Transform playershooting;
     public int val = 1;
     public string type = "Direction";
+    public GameObject[] Upgrades;
 
     void OnTriggerEnter (Collider other){
         if(other.tag == "Player" && other.GetType().Name != "SphereCollider"
@@ -30,13 +30,22 @@ public class WeaponOrb : MonoBehaviour
             switch(type) 
             {
             case "Faster":
-                playerShooting.timeBetweenBullets -= 0.03f; 
-                break;
+                playerShooting.timeBetweenBullets -= 0.03f;
+               break;
             default:
+                if(playerShooting.gunDirectionLevel == 3){
+                    break;
+                }
                 playerShooting.gunDirectionLevel += 1; 
                 break;
             }
-            Destroy(gameObject);
+            var upgrades = GameObject.FindGameObjectsWithTag("WeaponUpgrade");
+
+            foreach(var u in upgrades)
+            {
+                Destroy(u);
+            }
+     
         }
     }
 }

@@ -1,9 +1,13 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class EnemyManager : MonoBehaviour
 {
     public PlayerHealth playerHealth;
     public float spawnTime = 3f;
+
+    public GameObject Diagonal;
+    public GameObject Speed;
 
     public int totalWeight;
     public static int remainingEnemies = 0;
@@ -23,6 +27,8 @@ public class EnemyManager : MonoBehaviour
         if (isZenMode)
         {
             InvokeRepeating("Spawn", spawnTime, spawnTime);
+            InvokeRepeating("Spawn", spawnTime, spawnTime);
+            
         }
         else
         {
@@ -32,6 +38,8 @@ public class EnemyManager : MonoBehaviour
         }
 
     }
+
+
 
     void Update()
     {
