@@ -31,6 +31,14 @@
 > -   Wave Mode <br>
 >     Wave mode merupakan mode game dengan 12 level dimana untuk memenangkannya, player harus membunuh semua monster pada setiap levelnya. Semakin tinggi levelnya, semakin banyak pula monster yang akan di-summon. Scoring system yang dipakai adalah score akan bertambah setiap ada monster yang mati (termasuk suicide attack).
 
+> -   Orbs
+>     Terdapat 3 jenis orbs (speed, health dan power). Setiap orb akan dispawn di koordinat random dalam range map yang ditentukan. Waktu spawn diatur dengan coroutine setiap 10 detik.
+
+> -   Weapon
+>     Terdapat 2 opsi upgrade (diagonal dan speed). Kedua opsi diberikan dalam bentuk orb. 
+Pada zen mode, Kedua opsi dispawn di sekitar titik pusat map setiap 25 detik. Hanya salah satu dari kedua opsi yang dapat diambil pada setiap 25 detiknya.
+Pada wave mode, kedua opsi dispawn di sekitar titik pusat map setiap boss dikalahkan dan level telah dinaikkan.
+
 ### Library yang digunakan dan justifikasi penggunaannya.
 
 > -   Semua Library yang digunakan merupakan bawaan dari UnityEngine seperti,
