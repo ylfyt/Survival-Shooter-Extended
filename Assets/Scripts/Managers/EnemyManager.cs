@@ -9,7 +9,7 @@ public class EnemyManager : MonoBehaviour
     public static int remainingEnemies = 0;
     public static int remainingWeight;
     public static int waveLevel;
-    public static int finalLevel = 6;
+    int finalLevel = 12;
     public bool isZenMode = true;
     public int weightPerLevel = 10;
 
@@ -39,14 +39,17 @@ public class EnemyManager : MonoBehaviour
 
         if (!isZenMode)
         {
-            if (IsWinning()) { 
+            if (IsWinning())
+            {
                 waveLevel--;
-                GameOverManager.isWinning = true; 
-            } else {
-                if (remainingEnemies <= 0 )
+                GameOverManager.isWinning = true;
+            }
+            else
+            {
+                if (remainingEnemies <= 0)
                 {
-                    SpawnWave();    
-                    waveLevel++;   
+                    SpawnWave();
+                    waveLevel++;
                 }
             }
         }
@@ -67,7 +70,7 @@ public class EnemyManager : MonoBehaviour
     void SpawnWave()
     {
         totalWeight = weightPerLevel * waveLevel;
-        
+
         remainingWeight = totalWeight;
         while (totalWeight > 0)
         {
@@ -80,7 +83,8 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
-    bool IsWinning() {
-        return (waveLevel-1 > finalLevel);
+    bool IsWinning()
+    {
+        return (waveLevel - 1 > finalLevel);
     }
 }

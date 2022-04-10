@@ -26,10 +26,31 @@
 >     Game ini menyediakan fps mode / first person. Cara player bergerak dan menyerang musuh akan berbeda dengan mode yang biasanya.
 
 ### Library yang digunakan dan justifikasi penggunaannya.
-> - Semua Library yang digunakan merupakan bawaan dari UnityEngine seperti,
->> - UnityEngine.UI - Untuk mengatur UI pada canvas
->> - UnityEngine.SceneManagement - Untuk mengatur navigasi antar scene
+
+> -   Semua Library yang digunakan merupakan bawaan dari UnityEngine seperti,
+>     > -   UnityEngine.UI - Untuk mengatur UI pada canvas
+>     > -   UnityEngine.SceneManagement - Untuk mengatur navigasi antar scene
+
 ### Screenshot aplikasi.
+
+<div style="display:flex; flex-wrap: wrap; gap: 1%; justify-content:center">
+
+<div style="width: 48%;">
+<h5 style="margin-bottom:0;">Intro (input player name)</h5>
+<img src="Screenshot/intro.png" />
+</div>
+
+<div style="width: 48%;">
+<h5 style="margin-bottom:0;">Main Menu</h5>
+<img src="Screenshot/menu.png" />
+</div>
+
+<div style="width: 48%;">
+<h5 style="margin-bottom:0;">Game Over Screen</h5>
+<img src="Screenshot/game-over.png" />
+</div>
+
+</div>
 
 ### Pembagian Tugas
 
