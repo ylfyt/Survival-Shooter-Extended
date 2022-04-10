@@ -56,6 +56,36 @@
 <img src="Screenshot/game-over.png" />
 </div>
 
+<div style="width: 48%;">
+<h5 style="margin-bottom:0;">Zen Mode</h5>
+<img src="Screenshot/zen.png" />
+</div>
+
+<div style="width: 48%;">
+<h5 style="margin-bottom:0;">Wave Mode</h5>
+<img src="Screenshot/wave.png" />
+</div>
+
+<div style="width: 48%;">
+<h5 style="margin-bottom:0;">Zen Mode (FPS)</h5>
+<img src="Screenshot/zen-fps.png" />
+</div>
+
+<div style="width: 48%;">
+<h5 style="margin-bottom:0;">Wave Mode (FPS)</h5>
+<img src="Screenshot/wave-fps.png" />
+</div>
+
+<div style="width: 48%;">
+<h5 style="margin-bottom:0;">Scoreboard: Zen Mode</h5>
+<img src="Screenshot/zen-scoreboard.png" />
+</div>
+
+<div style="width: 48%;">
+<h5 style="margin-bottom:0;">Scoreboard: Wave Mode</h5>
+<img src="Screenshot/wave-scoreboard.png" />
+</div>
+
 </div>
 
 ### Pembagian Tugas
