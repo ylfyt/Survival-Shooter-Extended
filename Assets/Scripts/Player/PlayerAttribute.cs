@@ -3,14 +3,14 @@ using UnityEngine.UI;
 
 public class PlayerAttribute : MonoBehaviour
 {
-    public int minPower = 1;
+    int minPower = 2;
     public int maxPower = 8;
-    public float minSpeed = 3f;
+    float minSpeed = 3f;
     public float maxSpeed = 10f;
     public int maxHealth = 1000;
-    private int _power = 1;
+    private int _power = 2;
     private float _speed = 3f;
-    private int _health = 100;
+    private int _health = 300;
 
     public int power
     {

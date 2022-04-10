@@ -15,9 +15,9 @@
 
 > -   Player Attribute  
 >     Player memiliki 3 attribute yaitu **Power**, **Speed**, dan **Health**. Power akan mempengaruhi damage yang diberikan oleh senjata player ke musuh. Speed akan mempengaruhi kecepatan pergerakan player di map. Sedangkan health untuk darah atau nyawa yang tersisa dari player.
->     > -   **Power** : initial: 1; Max: 8
+>     > -   **Power** : initial: 2; Max: 8
 >     > -   **Speed** : Initial: 3; Max: 10
->     > -   **Health** : Initial: 100; Max: 10000
+>     > -   **Health** : Initial: 300; Max: 10000
 
 > -   New Mobs  
 >     Pada game ini terdapat 3 monster tambahan yaitu **skeleton (mage)**, **bomber**, dan **boss**. Mage tidak bisa berjalan seperti monster lainnya, akan tetapi bisa menyerang dari jauh dengan melemparkan **projectile bola api**. Bomber memiliki darah atau health yang kecil, tapi untuk kecepatan dan damage yang diberikannya cukup besar. Sedangkan boss memiliki damage dan darah yang lebih besar.
@@ -30,7 +30,6 @@
 
 > -   Wave Mode <br>
 >     Wave mode merupakan mode game dengan 12 level dimana untuk memenangkannya, player harus membunuh semua monster pada setiap levelnya. Semakin tinggi levelnya, semakin banyak pula monster yang akan di-summon. Scoring system yang dipakai adalah score akan bertambah setiap ada monster yang mati (termasuk suicide attack).
-
 
 ### Library yang digunakan dan justifikasi penggunaannya.
 

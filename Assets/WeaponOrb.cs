@@ -8,8 +8,9 @@ public class WeaponOrb : MonoBehaviour
     public string type = "Direction";
     public GameObject[] Upgrades;
 
-    void OnTriggerEnter (Collider other){
-        if(other.tag == "Player" && other.GetType().Name != "SphereCollider"
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player" && other.GetType().Name != "SphereCollider"
 )
         {
             getUpgrade(other);
@@ -20,32 +21,35 @@ public class WeaponOrb : MonoBehaviour
     void getUpgrade(Collider player)
     {
         var playerShooting = player.GetComponentInChildren<PlayerShooting>();
- 
- 
-        if(playerShooting == null){
+
+
+        if (playerShooting == null)
+        {
             Debug.Log("Gagal");
         }
-        else{
+        else
+        {
             Debug.Log(playerShooting.timeBetweenBullets);
-            switch(type) 
+            switch (type)
             {
-            case "Faster":
-                playerShooting.timeBetweenBullets -= 0.03f;
-               break;
-            default:
-                if(playerShooting.gunDirectionLevel == 3){
+                case "Faster":
+                    playerShooting.timeBetweenBullets -= 0.007f;
                     break;
-                }
-                playerShooting.gunDirectionLevel += 1; 
-                break;
+                default:
+                    if (playerShooting.gunDirectionLevel == 3)
+                    {
+                        break;
+                    }
+                    playerShooting.gunDirectionLevel += 1;
+                    break;
             }
             var upgrades = GameObject.FindGameObjectsWithTag("WeaponUpgrade");
 
-            foreach(var u in upgrades)
+            foreach (var u in upgrades)
             {
                 Destroy(u);
             }
-     
+
         }
     }
 }
