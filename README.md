@@ -3,7 +3,7 @@
 ### [TODO List](https://docs.google.com/document/d/1yY7RmJD9YZGf-wmjpBxvo6hABxueVf9PcHD9u6ccxvM/edit?usp=sharing) | [Ref:Notion](https://momentous-ring-807.notion.site/Agate-Survival-Shooter-b27ea3ef2545482bb10e2e0cda1bbc10)
 
 ### Deskripsi
-Survival Shooter: Extended, merupakan game ekstensi Survival Shooter dari Unity Learn.
+Survival Shooter: Extended, merupakan game ekstensi Survival Shooter dari Unity Learn. Game dibangun dengan Unity 2021.2.16f1. Terdapat 2 mode ekstensi permainan yaitu Zen dan Wave.
 
 
 ### Cara Kerja, terutama mengenai pemenuhan spesifikasi aplikasi.
