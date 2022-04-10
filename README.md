@@ -2,6 +2,10 @@
 
 ### [TODO List](https://docs.google.com/document/d/1yY7RmJD9YZGf-wmjpBxvo6hABxueVf9PcHD9u6ccxvM/edit?usp=sharing) | [Ref:Notion](https://momentous-ring-807.notion.site/Agate-Survival-Shooter-b27ea3ef2545482bb10e2e0cda1bbc10)
 
+### Deskripsi
+Survival Shooter: Extended, merupakan game ekstensi Survival Shooter dari Unity Learn.
+
+
 ### Cara Kerja, terutama mengenai pemenuhan spesifikasi aplikasi.
 
 > -   Main menu  
@@ -75,7 +79,7 @@ Pada wave mode, kedua opsi dispawn di sekitar titik pusat map setiap boss dikala
 
 -   Game Mode (Karlsen)
 
-    -   save score
+    -   Save score
     -   Zen
     -   Wave
 
