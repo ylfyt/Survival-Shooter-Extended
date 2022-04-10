@@ -155,9 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1509913240}
   spawnTime: 3
-  Diagonal: {fileID: 0}
-  Speed: {fileID: 0}
-  weaponManager: {fileID: 0}
+  weaponManager: {fileID: 688119343}
   totalWeight: 0
   isZenMode: 0
   weightPerLevel: 10

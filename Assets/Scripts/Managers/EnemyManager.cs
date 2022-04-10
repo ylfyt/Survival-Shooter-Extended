@@ -6,8 +6,6 @@ public class EnemyManager : MonoBehaviour
     public PlayerHealth playerHealth;
     public float spawnTime = 3f;
 
-    public GameObject Diagonal;
-    public GameObject Speed;
     public WeaponManager weaponManager;
 
     public int totalWeight;
