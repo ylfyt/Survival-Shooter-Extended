@@ -43,7 +43,7 @@ public class BomberAttack : MonoBehaviour
 
     public void KillBomber()
     {
-        isDead = true;
+        enemyHealth.isDead = true;
         enemyHealth.currentHealth = 0;
 
         GetComponent<CapsuleCollider>().isTrigger = true;
