@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PowerOrb : MonoBehaviour
 {
-    public Transform playershooting;
     public int val = 1;
     public string type = "Power";
 

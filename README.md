@@ -25,6 +25,13 @@
 > -   FPS Mode  
 >     Game ini menyediakan fps mode / first person. Cara player bergerak dan menyerang musuh akan berbeda dengan mode yang biasanya.
 
+> -   Zen Mode <br>
+>     Zen mode merupakan mode game dimana monster akan di-summon secara terus menerus setiap 3 detik. Pada mode ini player yang dapat bertahan paling lama akan memiliki score yang paling besar juga karena scoring system yang dipakai adalah berdasarkan waktu bertahan yang paling lama.
+
+> -   Wave Mode <br>
+>     Wave mode merupakan mode game dengan 12 level dimana untuk memenangkannya, player harus membunuh semua monster pada setiap levelnya. Semakin tinggi levelnya, semakin banyak pula monster yang akan di-summon. Scoring system yang dipakai adalah score akan bertambah setiap ada monster yang mati (termasuk suicide attack).
+
+
 ### Library yang digunakan dan justifikasi penggunaannya.
 
 > -   Semua Library yang digunakan merupakan bawaan dari UnityEngine seperti,
